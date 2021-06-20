@@ -10,6 +10,8 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { appRoutes } from './routes';
 import { CityService } from './_services/city.service';
+import { LocationService } from './_services/location.service';
+
 import { WeatherDetailsComponent } from './weatherDetails/weatherDetails.component';
 
 @NgModule({
@@ -29,7 +31,8 @@ import { WeatherDetailsComponent } from './weatherDetails/weatherDetails.compone
 
   ],
   providers: [
-    CityService
+    CityService,
+    LocationService
   ],
   bootstrap: [AppComponent]
 })

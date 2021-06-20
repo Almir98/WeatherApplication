@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   data:any;
   searchQuery = '';
   searchForm: FormGroup;
+  dateTime = Date.now();
   
   constructor(private cityService: CityService,private route: Router, private fb: FormBuilder) { }
 
