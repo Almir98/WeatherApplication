@@ -4,6 +4,20 @@
       <div class="title">
         <h2>Welcome to weather application</h2>
         <h3>Find your city and check the temperature. Explore now.</h3>
+
+        <div class="input">
+          <form [formGroup]="searchForm" (ngSubmit)="search">
+            <input class="search" placeholder="Search for a city" formControlName="searchBox" />
+            <div>
+              <span class="text-danger" *ngIf="getControl.searchBox.touched && getControl.searchBox.errors?.required">
+                City is required
+              </span>
+            </div>
+            <div>
+              <button class="btn btn-primary search-btn" (click)="search()">Search</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
