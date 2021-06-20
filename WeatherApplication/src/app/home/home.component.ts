@@ -9,7 +9,6 @@ import { CityService } from '../_services/city.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
   data:any;
   searchQuery = '';
   searchForm: FormGroup;

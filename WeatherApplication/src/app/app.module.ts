@@ -10,12 +10,14 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { appRoutes } from './routes';
 import { CityService } from './_services/city.service';
+import { WeatherDetailsComponent } from './weatherDetails/weatherDetails.component';
 
 @NgModule({
-  declarations: [		
+  declarations: [			
     AppComponent,
       HeaderComponent,
-      HomeComponent
+      HomeComponent,
+      WeatherDetailsComponent
    ],
   imports: [
     BrowserModule,
