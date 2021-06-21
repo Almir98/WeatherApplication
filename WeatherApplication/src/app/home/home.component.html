@@ -7,7 +7,7 @@
 
         <div class="input">
           <form [formGroup]="searchForm" (ngSubmit)="search">
-            <input class="search" placeholder="Search for a city" formControlName="searchBox" />
+            <input [(ngModel)]="inputValue" class="search" placeholder="Search for a city" formControlName="searchBox" />
             <div>
               <span class="text-danger" *ngIf="getControl.searchBox.touched && getControl.searchBox.errors?.required">
                 City name is required

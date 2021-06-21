@@ -7,28 +7,41 @@
     font-family: 'Poppins', sans-serif;
 }
 
-#current-weather-items{
-    min-width: 320px;
+
+.others{
+    margin: auto auto;
 }
 
+#current-weather-items{
+    width: 500px;
+    margin: auto auto;
+    margin-top: 35px;
+}
+
+th{
+    text-align: right;
+}
 .weather-time{
     font-size: 60px;
     margin: 0px;
 }
 
 .container{
-    padding: 20px 70px;
+    padding: 20px 100px;
     color:#fff;
+    margin: auto;
 }
 
 .current-info{
-    display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
+
 .date-container{
     font-weight: 100;
+    min-width: 55vw;
+    margin: auto auto;
 }
+
 .date-container .time{
     font-size: 70px;
 }
@@ -43,7 +56,9 @@
 }
 
 .place-container{
-    text-align: end;
+    margin-top: 20px;
+    text-align: center;
+    color: black;
 }
 
 .place-container .time-zone{
@@ -167,7 +182,7 @@
     }
 
     .place-container{
-        text-align: end;
+        display: inline;
         margin-top: 15px;
     }
 

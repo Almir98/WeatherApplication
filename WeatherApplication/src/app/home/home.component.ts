@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CityService } from '../_services/city.service';
+import { CommunicationService } from '../_services/communication.service';
 
 @Component({
   selector: 'app-home',
@@ -13,8 +14,9 @@ export class HomeComponent implements OnInit {
   searchQuery = '';
   searchForm: FormGroup;
   dateTime = Date.now();
-  
-  constructor(private cityService: CityService,private route: Router, private fb: FormBuilder) { }
+  inputValue: any;
+
+  constructor(private route: Router, private fb: FormBuilder, private communicationService: CommunicationService) { }
 
   ngOnInit() {
     this.searchForm = this.fb.group({
@@ -32,23 +34,11 @@ export class HomeComponent implements OnInit {
       return;
     }
      this.searchQuery = this.getControl.searchBox.value;
+     this.searchForm.reset();
 
-     if(this.searchQuery != ''){
-       this.getResponse(this.searchQuery);
-       this.searchForm.reset();
-    }
-    else{
-       this.route.navigate(['/home']);
-    }
+     this.communicationService.sendMessage(this.searchQuery);
+     this.route.navigate(['/city-details']);
   }
 
-  getResponse(value: string)
-  {
-    this.cityService.getByCity(value).subscribe(responseData =>{
-      this.data = responseData;
-      console.log(this.data);
-    }, error =>{
-      console.log(error);
-    });
-  }
+  
 }

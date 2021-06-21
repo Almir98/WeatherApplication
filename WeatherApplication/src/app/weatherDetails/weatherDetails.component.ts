@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CityService } from '../_services/city.service';
+import { CommunicationService } from '../_services/communication.service';
 import { LocationService } from '../_services/location.service';
 
 @Component({
@@ -11,20 +14,31 @@ export class WeatherDetailsComponent implements OnInit {
   dateTime = Date.now();
   cordinatesLng: any;
   cordinatesLat: any;
+  test:any;
+  searchQuery;
+  responseData: any;
 
-  constructor(private locationService: LocationService) { }
+  constructor(private locationService: LocationService,
+    private cityService: CityService, private communicationService: CommunicationService, private route: Router) {}
 
-  ngOnInit() {
-    this.getCordinates();
+    ngOnInit() {
+
+    this.communicationService.content.subscribe((data) => {
+      this.searchQuery = data;
+      this.getResponse(this.searchQuery);
+      });
+
   }
 
-  getCordinates()
+  getResponse(value)
   {
-    this.locationService.getPosition().then(pos=>
-      {
-        this.cordinatesLng = pos.lng;
-        this.cordinatesLat = pos.lat;
-      });
+    this.cityService.getByCity(value).subscribe(responseData =>{
+      this.responseData = responseData;
+      console.log(this.responseData);
+      console.log("podaci");
+    }, error =>{
+      console.log(error);
+    });
   }
 
 }

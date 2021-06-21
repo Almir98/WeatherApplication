@@ -2,17 +2,36 @@
   <div class="container">
     <div class="current-info">
       <div class="date-container">
-        <!-- <div class="time" id="time">
-          <p class="weather-time">{{dateTime | date:'shortTime'}}</p>
-          <p class="weather-time">{{dateTime | date:'mediumDate'}}</p>
-        </div> -->
 
         <div class="others" id="current-weather-items">
-
           <table>
             <tr>
               <td>Humidity</td>
-              <th>11 %</th>
+              <th>{{searchQuery.weather.main.temp}} %</th>
+            </tr>
+            <tr>
+              <td>Presure</td>
+              <th>0 mb</th>
+            </tr>
+            <tr>
+              <td>Wind speed</td>
+              <th> km/h</th>
+            </tr>
+            <tr>
+              <td>Sunrise</td>
+              <th> AM</th>
+            </tr>
+            <tr>
+              <td>Sunset</td>
+              <th> PM</th>
+            </tr>
+          </table>
+        </div>
+        <div class="others" id="current-weather-items">
+          <table>
+            <tr>
+              <td>Humidity</td>
+              <th>{{searchQuery.weather.main.temp}} %</th>
             </tr>
             <tr>
               <td>Presure</td>
@@ -47,7 +66,7 @@
 
   </div>
 
-  <div class="future-forecast">
+  <!-- <div class="future-forecast">
     <div class="today" id="current-temp">
       <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
       <div class="other">
@@ -87,8 +106,8 @@
         <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
         <div class="temp">Night - 25.6&#176; C</div>
         <div class="temp">Day - 35.6&#176; C</div>
-      </div>
-
+      </div> 
+      
     </div>
+  -->
   </div>
-</div>

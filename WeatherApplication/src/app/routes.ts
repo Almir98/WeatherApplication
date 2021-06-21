@@ -5,7 +5,9 @@ import { WeatherDetailsComponent } from "./weatherDetails/weatherDetails.compone
 export const appRoutes: Routes = [
 
     {path:'home',component: HomeComponent},
-    { path: 'city-id/:id', component: WeatherDetailsComponent},
+    {path:'city-details',component: WeatherDetailsComponent},
+
+    //{ path: 'city-id/:id', component: WeatherDetailsComponent},
 
     {path:'**',component: HomeComponent,pathMatch:'full'}
 ]
